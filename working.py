@@ -220,7 +220,11 @@ def main():
     timetable_outline = generate_empty_timetable_skeleton(details)
 
     # OpenAI-based constraints
-    constraints = ["Chemistry must always be taught in the second half of the day (periods 5-9).", "Math must be taught in the last period everyday.", "Computer science should be taught right before math ONLY on Tuesday. The rest of the days should be different", "Physics should be the second to last period everyday except Tuesday."]
+    constraints = ["Chemistry must always be taught in the second half of the day (periods 5-9).", 
+    "Math must be taught in the last period everyday.", 
+    "Computer science should be taught right before math.",
+    "Physics should be period number 3 on wednesday"]
+    
     openai_constraints = generate_if_statements(constraints, details, timetable_outline)
 
     # Generate timetables and check against both hardcoded and OpenAI constraints
